@@ -35,6 +35,8 @@ async def put_city(id: str, city: City):
             return {"message": "city updated successfully"}
         else:
             raise HTTPException(status_code=404, detail="city not found")
+    except HTTPException as e:
+        raise e
     except:
         raise HTTPException(status_code=500, detail="error updating city")
 
@@ -47,5 +49,7 @@ async def delete_city(id: str):
             return {"message": "city deleted successfully"}
         else:
             raise HTTPException(status_code=404, detail="city not found")
+    except HTTPException as e:
+        raise e
     except:
         raise HTTPException(status_code=500, detail="error deleting city")
