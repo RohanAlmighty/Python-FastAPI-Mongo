@@ -6,4 +6,5 @@ client = MongoClient(mongo_uri)
 
 db = client.database_01
 
-collection_name = db["cities"]
+cities_collection_name = db["cities"]
+countries_collection_name = db["countries"]
